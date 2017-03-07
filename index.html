@@ -15,14 +15,12 @@
       <h1>Responsive Design</h1>
       <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
     </header>
-
     <section class="slide cover" id="Cover">
       <div>
         <h2>Responsive Design</h2>
         <p>João Eduardo Montandon</p>
         <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
         <img src="images/wallpaper_coltec_wide.png" alt="" />
-
       </div>
     </section>
     <section class="slide">
@@ -36,10 +34,10 @@
         </ul>
       </div>
     </section>
-    <section class="slide cover">
+    <section class="slide cover section">
       <div>
-        <h2 class="shout">E agora, como faz?</h2>
-        <img src="images/devices.jpg" class="darker" alt="">
+        <h2>E agora, como faz?</h2>
+        <img src="images/devices.jpg" class="background darker" alt="">
       </div>
     </section>
     <section class="slide">
@@ -86,6 +84,11 @@
         </div>
       </div>
     </section>
+    <section class="slide section">
+      <div>
+        <h2>Grids Flexíveis</h2>
+      </div>
+    </section>
     <section class="slide">
       <div>
         <h2>Grids Flexíveis</h2>
@@ -99,15 +102,303 @@
     </section>
     <section class="slide">
       <div>
+        <h2>Grids Flexíveis: Passos</h2>
+        <ol>
+          <li>Definir tamanho do canvas</li>
+          <li>Alterar tamanho dos elementos para se tornarem <b>relativos</b> ao canvas</li>
+          <ul>
+            <li><b>Fontes</b> em pontos (<code>em</code>)</li>
+            <li><b>Elementos</b> em percentual (<code>%</code>)</li>
+          </ul>
+        </ol>
+        <code>Tam<sub>relativo</sub> = Tam<sub>elemento</sub> / Tam<sub>container</sub></code>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Grids Flexíveis -- Fontes</h2>
+        <p>Para alterar o tamanho das fontes, primeiro define-se o tamanho padrão e então calcula-se o tamanho das demais fontes </p>
+        <pre>
+          <code>
+body {
+  background-color: #2A5D7F;
+  color: #FFFFFF;
+  font-size: 100%; /* tamanho padrão */
+  font-family: Arial;
+}
+          </code>
+        </pre>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Grids Flexíveis -- Fontes</h2>
+        <p>Definindo o tamanho proporcional das fontes:</p>
+        <div class="container_12">
+          <div class="grid_6">
+            Antes:
+            <pre>
+              <code>
+h1 {
+  font-size: 30px;
+}
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            Depois:
+            <pre>
+              <code>
+h1 {
+  /* 16px / 30px = 1.875em */
+  font-size: 1.875em;
+}
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Grids Flexíveis -- Elementos</h2>
+        <p>
+          Para alterar o tamanho dos elementos, deve-se definir qual vai ser o tamanho do canvas, e então definir o tamanho relativo de cada um dos elementos
+        </p>
+        <p>
+          <b>Importante!!</b> O tamanho dos elementos deve ser calculado com base em seu <b>container</b>
+        </p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Grids Flexíveis -- Elementos</h2>
+        <p>
+          Definindo os tamanho dos elementos:
+        </p>
+        <pre>
+          <code>
+/* css que sera atribuido ao canvas */
+#page {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  width: 90%; /* tamanho deve ser preferencialmente relativo */
+}
+          </code>
+        </pre>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Grids Flexíveis -- Elementos</h2>
+        <p>Definindo o tamanho proporcional das fontes:</p>
+        <div class="container_12">
+          <div class="grid_6">
+            Antes:
+            <pre>
+              <code>
+.main {
+  width: 576px;
+}
+
+.insidemain {
+  width: 432px;
+}
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            Depois:
+            <pre>
+              <code>
+.main {
+  width: 60%; /* 576px / 960px */
+}
+
+.insidemain {
+  width: 75%; /* 432px / 576px */
+}
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Grids Flexíveis -- Margins & Paddings</h2>
+        <p>
+          <code>margin</code> e <code>padding</code> devem respeitar seu próprio parentesco ao se calcular o tamanho relativo
+        </p>
+        <div class="container_12">
+          <div class="grid_6">
+            Antes:
+            <pre>
+              <code>.element {
+  width: 800px;
+  padding: 40px;
+}
+.subelement {
+  margin: 60px;
+}
+              </code>
+            </pre>
+          </div>
+          <div class="grid_6">
+            Depois: 
+            <pre>
+              <code>.element {
+  width: 800px;
+  padding: 5%; /* 40/800 */
+}
+.subelement {
+  margin: 7.5%; /* 60/800 */
+}
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide section">
+      <div>
+        <h2>Imagens Flexíveis</h2>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Imagens Flexíveis</h2>
+        <p>Elementos de media devem ser limitadas ao tamanho de seu container por padrão.</p>
+        <pre>
+          <code>
+img, embed, object, video {
+  max-width: 100%; /* restringe o tamanho da media ao seu container */
+}
+          </code>
+        </pre>
+      </div>
+    </section>
+    <section class="slide section">
+      <div>
+        <h2>Media Queries</h2>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="container_12">
+        <h2>Media Queries</h2>
+        <div class="row">
+          <div class="grid_8">
+            <p>
+              Até o momento implementamos um layout <b>adaptativo</b>
+            </p>
+            <p>
+              Como alterar, de fato, a estrutura da página?? É possível??
+            </p>
+          </div>
+          <div class="grid_4">
+            <img src="images/msite_tosco.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Media Queries</h2>
+        <p>
+          <b>Media Queries</b> é um recurso presente no CSS3 que permite definir um estilo com base em características físicas do dispositivo
+        </p>
+        <p>
+          Desenvolvedor informa o tipo de media e uma determinada restrição. O navegador então valida os parâmetros da media query no momento da renderização.
+        </p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Media Queries</h2>
+        <pre>
+          <code>
+/* Estilo aplicado para telas maiores que 1024px de largura*/            
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 100%;
+  }
+}
+          </code>
+        </pre>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Media Queries</h2>
+        <p>Media queries podem ser aplicadas tanto em CSS quanto em HTML</p>
+        <b>HTML</b>
+        <pre>
+          <code>&lt;link rel="stylesheet" href="desktop.css" <mark>media="screen and (min-width: 1024px)" </mark> /&gt;
+          </code>
+        </pre>
+<b>CSS</b>
+        <pre>
+          <code><mark>@media screen and (min-width: 1024px)</mark> {
+  /* ... */
+}
+          </code>
+        </pre>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="container_12">
+        <h2>Media Queries</h2>
+        <p>Quais restrições se aplicam ao media query?</p>
+        <div class="grid_3">
+          <table>
+            <tr><td><b>Tipo de Media</b></td></tr>
+            <tr><td>all</td></tr>
+            <tr><td>screen</td></tr>
+            <tr><td>print</td></tr>
+          </table>
+        </div>
+        <div class="grid_8 prefix_1">
+          <table>
+            <tr><td><b>Restrições</b></td><td><b>Variações</b></td></tr>
+            <tr><td>width</td><td>max ou min</td></tr>
+            <tr><td>height</td><td>max ou min</td></tr>
+            <tr><td>device-width</td><td>max ou min</td></tr>
+            <tr><td>orientation</td><td>portrait ou landscape</td></tr>
+            <tr><td>resolution</td><td>max ou min</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Sidebar: A propriedade <code>viewport</code></h2>
+        <p>Alguns aparelhos renderizam a página em uma resolução diferente de seu tamanho.</p>
+        <p><b>Resultado:</b> Muitas das media queries criadas não funcionavam nos aparelhos</p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>Sidebar: A propriedade <code>viewport</code></h2>
+        <p><b>Solução:</b> Inserir uma meta tag para verificar qual dimensão deverá ser carregada</p>
+        Habemus <code>viewport</code>:
+        <pre>
+          <code>
+&lt;meta name="viewport" content="initial-scale=1.0, width=device-width"/&gt;
+          </code>
+        </pre>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
         <h2>Referências</h2>
           <p>
-            CSS: The missing manual; McFarland, David; O'Reilly; 2009 - 2a Edição
+            Responsive Web Design, Ethan Marcotte, A Book Apart, 2011.
           </p>
           <p>
-            CSS Avançado; Joseph R. Lewis e Meitar Moskovitz; Novatec; 2010
+            <a href="http://tableless.com.br/introducao-ao-responsive-web-design/">Introdução ao Responsive Web Design</a>, Diego Eis
           </p>
           <p>
-            <a href="http://www.w3schools.com/css">w3Schools: CSS Basics</a>
+            <a href="http://tableless.com.br/introducao-sobre-media-queries/">Introdução sobre Media Queries</a>, Diego Eis
           </p>
       </div>
     </section>

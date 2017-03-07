@@ -138,6 +138,12 @@ img.darker {
 	filter: brightness(50%);
 	-webkit-filter: brightness(50%);
 }
+
 img {
 	max-width: 100%;
+}
+
+img.background {
+	max-width: none;
+	width: 100%;
 }
